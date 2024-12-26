@@ -1,0 +1,28 @@
+body {
+    overflow: hidden;
+    background-image: url("../gifs/spiral.gif");
+    background-size: 100px;
+}
+
+.circular-image {
+    width: 200px;
+    border-radius: 5%;
+    object-fit: cover;
+}
+
+.triangle {
+    position: absolute;
+    top: -20px; /* Starting position */
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid rgb(176, 176, 114); /* Triangle color */
+    pointer-events: none;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg); /* Falling and rotating */
+    }
+}
