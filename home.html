@@ -9,9 +9,19 @@
 </head>
 <body>
     <div class="full-height d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
-        <h1 class="text-white">Welcome to Prabhu Teja Pamula's Portfolio</h1>
+        <header class="text-white">
+            <h1 id="glowing-text">Lights</h1>
+          </header>
         <img src="./src/assets/images/me.jpeg" alt="loading..." class="circular-image mb-4"">
         <button class="btn btn-primary" id="triangle-button">Click Me!</button>
+        <section class="container mt-5">
+            <div class="music-player">
+              <audio id="audioPlayer" src="./src/assets/audio/Kid Francescoli - Moon (Official Video) - Kid Francescoli (youtube).mp3" autoplay></audio>
+              <div>
+                <button id="toggleButton" class="btn btn-danger" onclick="toggleMusic()">Pause Music</button>
+              </div>
+            </div>
+          </section>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

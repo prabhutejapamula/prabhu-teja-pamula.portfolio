@@ -26,3 +26,110 @@ body {
         transform: translateY(100vh) rotate(360deg); /* Falling and rotating */
     }
 }
+
+.music-player {
+    background: #111; /* Black background */
+    padding: 15px; /* Reduced padding for smaller size */
+    border-radius: 50%; /* Circular shape */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 0, 150, 0.6); /* Glowing edges */
+    text-align: center;
+    width: 150px; /* Reduced size */
+    height: 150px; /* Reduced size */
+    position: fixed; /* Fixed position */
+    bottom: 10px; /* Fixed to bottom-right */
+    right: 10px; /* Fixed to bottom-right */
+    animation: moveAround 15s linear infinite, fadeIn 2s ease-out, pulsePlayer 3s infinite ease-in-out; /* Movement, fade-in, and pulsing animations */
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+  }
+  
+  .music-player:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255, 0, 150, 0.2); /* Glowing ring */
+    box-shadow: 0 0 20px rgba(255, 0, 150, 0.5);
+    animation: glowing 2s infinite ease-in-out;
+  }
+  
+  .music-player button {
+    background-color: #222;
+    border: 2px solid #ff00b3;
+    color: #ff00b3;
+    padding: 8px 20px; /* Smaller padding */
+    border-radius: 50px;
+    font-size: 12px; /* Smaller font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 0, 150, 0.4);
+    position: relative;
+    z-index: 1;
+    animation: pulseButton 3s infinite ease-in-out; /* Pulsing effect */
+  }
+  
+  .music-player button:hover {
+    background-color: #111;
+    border-color: #ff00b3;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(255, 0, 150, 0.6);
+    transform: scale(1.1);
+  }
+  
+  /* Fading effect for the music player */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  
+  /* Glowing effect for player */
+  @keyframes glowing {
+    0% { box-shadow: 0 0 20px rgba(255, 0, 150, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(255, 0, 150, 0.6); }
+    100% { box-shadow: 0 0 20px rgba(255, 0, 150, 0.3); }
+  }
+  
+  /* Pulsing animation for music player */
+  @keyframes pulsePlayer {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Pulsing animation for button */
+  @keyframes pulseButton {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Continuous movement animation (circular loop) */
+  @keyframes moveAround {
+    0% { bottom: 10px; right: 10px; }
+    25% { bottom: 10px; right: 30px; }
+    50% { bottom: 30px; right: 30px; }
+    75% { bottom: 30px; right: 10px; }
+    100% { bottom: 10px; right: 10px; }
+  }
+  
+  .music-player h2 {
+    font-size: 14px; /* Smaller text size */
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    animation: fadeInText 2s ease-out; /* Fading text animation */
+  }
+  
+  /* Text fade-in effect */
+  @keyframes fadeInText {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
