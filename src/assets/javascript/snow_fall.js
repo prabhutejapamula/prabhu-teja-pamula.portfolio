@@ -1,5 +1,5 @@
 document.getElementById('snow-button').addEventListener('click', function() {
-    createSnowflakes(100); // Create 100 snowflakes
+    createSnowflakes(100);
 });
 
 function createSnowflakes(count) {
