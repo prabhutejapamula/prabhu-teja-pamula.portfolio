@@ -3,7 +3,6 @@ const audioPlayer = document.getElementById('audioPlayer');
     document.getElementById('toggleButton').addEventListener('click', function() {
         createTriangleflakes(137);
     });
-    
 
     function toggleMusic() {
       if (audioPlayer.paused) {
@@ -19,9 +18,9 @@ const audioPlayer = document.getElementById('audioPlayer');
       }
     }
 
-document.getElementById('triangle-button').addEventListener('click', function() {
-    createTriangleflakes(137);
-});
+    document.getElementById('triangle-button').addEventListener('click', function() {
+      createTriangleflakes(137);
+  });
 
 function createTriangleflakes(count) {
     for (let i = 0; i < count; i++) {
@@ -43,12 +42,9 @@ function createTriangleflakes(count) {
 }
 
 const glowingText = document.getElementById('glowing-text');
-const colors = ['#ff00b3', '#00ffcc', '#ffcc00', '#ff0066', '#cc00ff']; // Array of colors
-
-// Split the text into individual characters and wrap each in a <span> tag
+const colors = ['#ff00b3', '#00ffcc', '#ffcc00', '#ff0066', '#cc00ff'];
 const text = glowingText.innerText;
-glowingText.innerHTML = ''; // Clear the original text
-
+glowingText.innerHTML = '';
 text.split('').forEach(letter => {
   const span = document.createElement('span');
   span.innerText = letter;
@@ -60,11 +56,24 @@ let currentColorIndex = 0;
 
 function changeLetterColors() {
   spans.forEach(span => {
-    // Assign each letter a random color from the array
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     span.style.color = randomColor;
   });
 }
-
-// Change colors every 500 milliseconds
 setInterval(changeLetterColors, 500);
+
+const button = document.getElementById('triangle-button');
+function triggerConfetti() {
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { x: 0.5, y: 0.5 },
+        shapes: ['square', 'circle'],
+        colors: ['#ff0000', '#00ff00', '#0000ff', '#ffcc00'],
+    });
+}
+button.addEventListener('click', triggerConfetti);
+
+document.getElementById('resume-button').onclick = function() {
+  window.open('./src/assets/docs/Prabhu Teja Pamula.pdf', '_blank');
+};
